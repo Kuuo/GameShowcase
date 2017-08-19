@@ -1,0 +1,64 @@
+@model GameShowcase.Models.AccountViewModels.LeaderLoginViewModel
+
+@{
+    ViewData["Title"] = "Admin Login";
+}
+<link href="~/css/login-page.min.css" rel="stylesheet" />
+<link href="~/css/mdl-textfield-justify.css" rel="stylesheet" />
+
+<header class="mdl-layout__header mdl-layout__header--scroll mdl-layout__header--transparent home-header">
+  <div class="large-screen-only mdl-layout__header-row"></div>
+  <div class="mdl-layout__header-row">
+    <h4>Game Demo - Admin Login</h4>
+  </div>
+  <div class="large-screen-only mdl-layout__header-row"></div>
+</header>
+
+<main class="mdl-layout__content">
+  <div class="container game-container">
+    <div class="login-form-container">
+      <form asp-controller="Account" asp-action="Login">
+        <div class="mdl-card mdl-shadow--4dp login-form">
+          <p class="login-form-title" id="login-title">组长登录</p>
+
+          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label login-form-group"
+               id="stu-number">
+            <input asp-for="StuNumber" type="number" class="mdl-textfield__input" maxlength="10" id="stu-number-input">
+            <label class="mdl-textfield__label" for="stu-number-input">学号</label>
+            <span asp-validation-for="StuNumber" class="mdl-textfield__error"></span>
+          </div>
+
+          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label login-form-group">
+            <input asp-for="Password" class="mdl-textfield__input" id="password-input">
+            <label class="mdl-textfield__label" for="password-input">密码</label>
+            <span asp-validation-for="Password" class="mdl-textfield__error"></span>
+          </div>
+
+          <div asp-validation-summary="ModelOnly" class="alert alert-danger">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+
+          <div>
+            <button type="submit" id="loginSubmit"
+                    class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored">
+              登录
+            </button>
+          </div>
+        </div>
+
+        <div>
+          <a asp-controller="Account" asp-action="AdminLogin">管理员身份登录</a>
+
+          <a asp-controller="Home" asp-action="Index" style="float: right">返回首页</a>
+        </div>
+      </form>
+
+    </div>
+  </div>
+</main>
+
+@section Scripts {
+  @{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
+}

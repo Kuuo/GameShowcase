@@ -1,0 +1,42 @@
+@model IEnumerable<int>
+@{
+    var devYear = (int)ViewData["DevYear"];
+    var inDetailsPage = (bool?)ViewData["InDetailsPage"] ?? false;
+}
+
+@if (inDetailsPage)
+{
+    <div class="game-detail-menu">
+      <button id="devYear-menu"
+              style="font-size: 24px;"
+              class="mdl-button mdl-js-button white-anchor">
+        @devYear
+        <i class="material-icons">&#xE5C5;</i>
+      </button>
+    </div>
+}
+else
+{
+    <h4>
+      <button id="devYear-menu"
+              style="margin: 16px 8px; font-size: 24px;"
+              class="mdl-button mdl-js-button white-anchor">
+        @devYear
+        <i class="material-icons">&#xE5C5;</i>
+      </button>
+    </h4>
+}
+
+
+<div class="mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect"
+     for="devYear-menu">
+  @foreach (int year in Model)
+  {
+      <a asp-action="Index" asp-controller="Game" asp-route-id="@year">
+        <span class="mdl-menu__item">@year</span>
+      </a>
+  }
+  <a asp-action="Index" asp-controller="Home">
+    <span class="mdl-menu__item">首页</span>
+  </a>
+</div>

@@ -1,0 +1,66 @@
+@model Game
+
+@{
+    var hasDemo = !string.IsNullOrEmpty(Model.DemoUrl);
+    var screenshots = Model.Screenshots.ToList();
+    var slideCount = screenshots?.Count ?? 0;
+}
+
+<h3>@Model.Title</h3>
+
+<div class="game-base-info">
+  <span class="game-details-developers">开发组： @Model.Developers</span>
+  <span class="mdl-chip" style="float: right">
+    <span class="mdl-chip__text">@Model.Genre</span>
+  </span>
+</div>
+
+<hr />
+
+<div class="game-details-description">
+  @Html.Raw(Model.Description)
+</div>
+
+<!-- Demo Video -->
+@if (hasDemo)
+{
+    <div class="game-detail-video">
+      <p style="text-align: left;"><strong>演示视频：</strong></p>
+      <video id="demoVideo" src="@Model.DemoUrl" poster="@Model.CoverUrl" controls />
+    </div>
+}
+<!-- End Of Demo Video -->
+
+<!-- Screenshots -->
+@if (slideCount > 0)
+{
+    <div class="game-detail-screenshots">
+      <p><strong>游戏截图：</strong></p>
+
+      <div class="slideshow-container">
+        @for (int i = 0; i < slideCount; i++)
+        {
+            <div class="slideshow slidefade">
+              <div class="numbertext">@(i + 1) / @slideCount</div>
+              <img src="@screenshots[i].Url" />
+            </div>
+        }
+
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+      </div>
+
+      <div class="slideshow-thumbs mdl-grid">
+        @for (int i = 0; i < slideCount; i++)
+        {
+            <div class="mdl-cell mdl-cell--2-col">
+              <img class="slideshow-thumb" src="@screenshots[i].Url"
+                   onclick="currentSlide(@(i + 1))" />
+            </div>
+        }
+      </div>
+    </div>
+}
+<!-- End Of Screenshots -->
+
+<script src="~/js/game-details.min.js"></script>

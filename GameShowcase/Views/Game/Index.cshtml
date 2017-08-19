@@ -1,0 +1,43 @@
+@model IEnumerable<Game>
+
+@{
+    ViewData["Title"] = ViewData["DevYear"];
+    var gameCount = Model.Count();
+}
+
+<header class="mdl-layout__header mdl-layout__header--scroll mdl-layout__header--transparent home-header">
+  <div class="mdl-layout__header-row large-screen-only"></div>
+  <div class="mdl-layout__header-row">
+    <a asp-controller="Home" asp-action="Index" class="white-anchor">
+      <h4>Game Demo From JXUFE</h4>
+    </a>
+    @await Component.InvokeAsync(nameof(GameShowcase.ViewComponents.ExistDevYearList))
+  </div>
+  <div class="mdl-layout__header-row large-screen-only"></div>
+</header>
+
+<main class="mdl-layout__content">
+  <div class="mdl-grid container game-container">
+    @if (gameCount > 0)
+    {
+        foreach (var game in Model)
+        {
+            <a asp-controller="Game" asp-action="Details" asp-route-id="@game.Id"
+               class="mdl-cell mdl-cell--6-col game-entry"
+               style="background-image: url(@game.CoverUrl)">
+              <div class="game-entry-content">
+                <h5>@game.Title</h5>
+                <div class="game-entry-developers">
+                  @game.Developers
+                </div>
+              </div>
+            </a>
+        }
+    }
+    else
+    {
+        <h3 style="text-align:center">No Games Here</h3>
+    }
+  </div>
+
+</main>

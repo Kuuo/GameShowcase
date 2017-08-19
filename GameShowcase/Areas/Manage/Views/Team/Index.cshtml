@@ -1,0 +1,15 @@
+@model int
+
+@{
+    ViewData["Title"] = "本组游戏";
+    Layout = "~/Areas/Manage/Views/Shared/_TeamLayout.cshtml";
+}
+
+<div style="margin: 48px auto;">
+  <div style="text-align: right; margin-bottom: -56px;">
+    <a asp-area="" asp-controller="Game" asp-action="Details" asp-route-id="@Model">
+      到游戏详情页查看
+    </a>
+  </div>
+  @await Component.InvokeAsync(nameof(GameDetails), new { id = Model })
+</div>

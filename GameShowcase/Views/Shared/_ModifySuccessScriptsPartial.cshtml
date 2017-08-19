@@ -1,0 +1,5 @@
+﻿
+<script type="text/javascript">
+  var success = @((bool)ViewData["ModifySuccess"] ? 1 : 0);
+  $('#success-prompt').css('display', success == 1 ? "block" : "none");
+</script>

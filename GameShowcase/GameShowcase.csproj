@@ -1,0 +1,367 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp1.1</TargetFramework>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <PackageTargetFallback>$(PackageTargetFallback);portable-net45+win8+wp8+wpa81;</PackageTargetFallback>
+    <UserSecretsId>9037cfb5-e76a-477d-b8b9-57d8c407a3ee</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Views\Shared\Components\ExistDevGroupList\**" />
+    <Content Remove="Views\Shared\Components\ExistDevGroupList\**" />
+    <EmbeddedResource Remove="Views\Shared\Components\ExistDevGroupList\**" />
+    <None Remove="Views\Shared\Components\ExistDevGroupList\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Properties\PublishProfiles\CustomProfile.pubxml" />
+    <None Remove="Properties\PublishProfiles\CustomProfile1.pubxml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="wwwroot\css\mag-team.css">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="wwwroot\css\common.css" />
+    <Content Include="wwwroot\css\game-entry.css" />
+    <Content Include="wwwroot\css\home-page.css" />
+    <Content Include="wwwroot\css\login-page.css" />
+    <Content Include="wwwroot\css\mdl-textfield-justify.css" />
+    <Content Include="wwwroot\css\slideshow.css" />
+    <Content Include="wwwroot\images\header-background.jpg" />
+    <Content Include="wwwroot\images\icon01.png" />
+    <Content Include="wwwroot\js\common.js" />
+    <Content Include="wwwroot\js\mag-team.js" />
+    <Content Include="wwwroot\js\slideshow.js" />
+    <Content Include="wwwroot\js\toPageTop - Copy.js" />
+    <Content Include="wwwroot\js\toPageTop.js" />
+    <Content Include="wwwroot\js\video-click.js" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\adapters\jquery.js" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\build-config.js" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\ckeditor.js" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\config.js" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\contents.css" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\lang\en.js" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\lang\zh-cn.js" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\lang\zh.js" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\LICENSE.md" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\a11yhelp\dialogs\a11yhelp.js" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\a11yhelp\dialogs\lang\af.js" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\a11yhelp\dialogs\lang\ar.js" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\a11yhelp\dialogs\lang\az.js" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\a11yhelp\dialogs\lang\bg.js" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\a11yhelp\dialogs\lang\ca.js" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\a11yhelp\dialogs\lang\cs.js" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\a11yhelp\dialogs\lang\cy.js" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\a11yhelp\dialogs\lang\da.js" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\a11yhelp\dialogs\lang\de-ch.js" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\a11yhelp\dialogs\lang\de.js" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\a11yhelp\dialogs\lang\el.js" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\a11yhelp\dialogs\lang\en-gb.js" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\a11yhelp\dialogs\lang\en.js" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\a11yhelp\dialogs\lang\eo.js" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\a11yhelp\dialogs\lang\es-mx.js" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\a11yhelp\dialogs\lang\es.js" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\a11yhelp\dialogs\lang\et.js" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\a11yhelp\dialogs\lang\eu.js" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\a11yhelp\dialogs\lang\fa.js" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\a11yhelp\dialogs\lang\fi.js" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\a11yhelp\dialogs\lang\fo.js" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\a11yhelp\dialogs\lang\fr-ca.js" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\a11yhelp\dialogs\lang\fr.js" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\a11yhelp\dialogs\lang\gl.js" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\a11yhelp\dialogs\lang\gu.js" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\a11yhelp\dialogs\lang\he.js" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\a11yhelp\dialogs\lang\hi.js" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\a11yhelp\dialogs\lang\hr.js" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\a11yhelp\dialogs\lang\hu.js" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\a11yhelp\dialogs\lang\id.js" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\a11yhelp\dialogs\lang\it.js" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\a11yhelp\dialogs\lang\ja.js" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\a11yhelp\dialogs\lang\km.js" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\a11yhelp\dialogs\lang\ko.js" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\a11yhelp\dialogs\lang\ku.js" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\a11yhelp\dialogs\lang\lt.js" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\a11yhelp\dialogs\lang\lv.js" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\a11yhelp\dialogs\lang\mk.js" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\a11yhelp\dialogs\lang\mn.js" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\a11yhelp\dialogs\lang\nb.js" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\a11yhelp\dialogs\lang\nl.js" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\a11yhelp\dialogs\lang\no.js" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\a11yhelp\dialogs\lang\oc.js" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\a11yhelp\dialogs\lang\pl.js" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\a11yhelp\dialogs\lang\pt-br.js" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\a11yhelp\dialogs\lang\pt.js" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\a11yhelp\dialogs\lang\ro.js" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\a11yhelp\dialogs\lang\ru.js" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\a11yhelp\dialogs\lang\si.js" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\a11yhelp\dialogs\lang\sk.js" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\a11yhelp\dialogs\lang\sl.js" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\a11yhelp\dialogs\lang\sq.js" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\a11yhelp\dialogs\lang\sr-latn.js" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\a11yhelp\dialogs\lang\sr.js" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\a11yhelp\dialogs\lang\sv.js" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\a11yhelp\dialogs\lang\th.js" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\a11yhelp\dialogs\lang\tr.js" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\a11yhelp\dialogs\lang\tt.js" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\a11yhelp\dialogs\lang\ug.js" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\a11yhelp\dialogs\lang\uk.js" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\a11yhelp\dialogs\lang\vi.js" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\a11yhelp\dialogs\lang\zh-cn.js" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\a11yhelp\dialogs\lang\zh.js" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\a11yhelp\dialogs\lang\_translationstatus.txt" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\about\dialogs\about.js" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\about\dialogs\hidpi\logo_ckeditor.png" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\about\dialogs\logo_ckeditor.png" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\colordialog\dialogs\colordialog.css" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\colordialog\dialogs\colordialog.js" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\copyformatting\cursors\cursor-disabled.svg" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\copyformatting\cursors\cursor.svg" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\copyformatting\styles\copyformatting.css" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\dialog\dialogDefinition.js" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\div\dialogs\div.js" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\find\dialogs\find.js" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\flash\dialogs\flash.js" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\flash\images\placeholder.png" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\forms\dialogs\button.js" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\forms\dialogs\checkbox.js" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\forms\dialogs\form.js" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\forms\dialogs\hiddenfield.js" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\forms\dialogs\radio.js" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\forms\dialogs\select.js" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\forms\dialogs\textarea.js" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\forms\dialogs\textfield.js" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\forms\images\hiddenfield.gif" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\icons.png" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\icons_hidpi.png" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\iframe\dialogs\iframe.js" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\iframe\images\placeholder.png" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\image\dialogs\image.js" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\image\images\noimage.png" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\link\dialogs\anchor.js" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\link\dialogs\link.js" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\link\images\anchor.png" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\link\images\hidpi\anchor.png" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\liststyle\dialogs\liststyle.js" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\magicline\images\hidpi\icon-rtl.png" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\magicline\images\hidpi\icon.png" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\magicline\images\icon-rtl.png" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\magicline\images\icon.png" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\notification\lang\en.js" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\notification\lang\zh-cn.js" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\notification\lang\zh.js" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\notification\plugin.js" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\pagebreak\images\pagebreak.gif" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\pastefromword\filter\default.js" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\preview\preview.html" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\scayt\CHANGELOG.md" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\scayt\dialogs\dialog.css" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\scayt\dialogs\options.js" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\scayt\dialogs\toolbar.css" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\scayt\LICENSE.md" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\scayt\README.md" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\scayt\skins\moono-lisa\scayt.css" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\showblocks\images\block_address.png" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\showblocks\images\block_blockquote.png" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\showblocks\images\block_div.png" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\showblocks\images\block_h1.png" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\showblocks\images\block_h2.png" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\showblocks\images\block_h3.png" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\showblocks\images\block_h4.png" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\showblocks\images\block_h5.png" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\showblocks\images\block_h6.png" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\showblocks\images\block_p.png" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\showblocks\images\block_pre.png" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\smiley\dialogs\smiley.js" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\smiley\images\angel_smile.gif" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\smiley\images\angel_smile.png" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\smiley\images\angry_smile.gif" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\smiley\images\angry_smile.png" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\smiley\images\broken_heart.gif" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\smiley\images\broken_heart.png" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\smiley\images\confused_smile.gif" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\smiley\images\confused_smile.png" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\smiley\images\cry_smile.gif" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\smiley\images\cry_smile.png" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\smiley\images\devil_smile.gif" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\smiley\images\devil_smile.png" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\smiley\images\embaressed_smile.gif" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\smiley\images\embarrassed_smile.gif" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\smiley\images\embarrassed_smile.png" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\smiley\images\envelope.gif" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\smiley\images\envelope.png" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\smiley\images\heart.gif" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\smiley\images\heart.png" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\smiley\images\kiss.gif" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\smiley\images\kiss.png" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\smiley\images\lightbulb.gif" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\smiley\images\lightbulb.png" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\smiley\images\omg_smile.gif" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\smiley\images\omg_smile.png" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\smiley\images\regular_smile.gif" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\smiley\images\regular_smile.png" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\smiley\images\sad_smile.gif" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\smiley\images\sad_smile.png" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\smiley\images\shades_smile.gif" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\smiley\images\shades_smile.png" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\smiley\images\teeth_smile.gif" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\smiley\images\teeth_smile.png" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\smiley\images\thumbs_down.gif" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\smiley\images\thumbs_down.png" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\smiley\images\thumbs_up.gif" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\smiley\images\thumbs_up.png" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\smiley\images\tongue_smile.gif" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\smiley\images\tongue_smile.png" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\smiley\images\tounge_smile.gif" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\smiley\images\whatchutalkingabout_smile.gif" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\smiley\images\whatchutalkingabout_smile.png" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\smiley\images\wink_smile.gif" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\smiley\images\wink_smile.png" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\specialchar\dialogs\lang\af.js" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\specialchar\dialogs\lang\ar.js" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\specialchar\dialogs\lang\az.js" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\specialchar\dialogs\lang\bg.js" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\specialchar\dialogs\lang\ca.js" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\specialchar\dialogs\lang\cs.js" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\specialchar\dialogs\lang\cy.js" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\specialchar\dialogs\lang\da.js" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\specialchar\dialogs\lang\de-ch.js" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\specialchar\dialogs\lang\de.js" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\specialchar\dialogs\lang\el.js" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\specialchar\dialogs\lang\en-au.js" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\specialchar\dialogs\lang\en-ca.js" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\specialchar\dialogs\lang\en-gb.js" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\specialchar\dialogs\lang\en.js" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\specialchar\dialogs\lang\eo.js" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\specialchar\dialogs\lang\es-mx.js" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\specialchar\dialogs\lang\es.js" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\specialchar\dialogs\lang\et.js" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\specialchar\dialogs\lang\eu.js" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\specialchar\dialogs\lang\fa.js" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\specialchar\dialogs\lang\fi.js" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\specialchar\dialogs\lang\fr-ca.js" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\specialchar\dialogs\lang\fr.js" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\specialchar\dialogs\lang\gl.js" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\specialchar\dialogs\lang\he.js" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\specialchar\dialogs\lang\hr.js" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\specialchar\dialogs\lang\hu.js" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\specialchar\dialogs\lang\id.js" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\specialchar\dialogs\lang\it.js" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\specialchar\dialogs\lang\ja.js" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\specialchar\dialogs\lang\km.js" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\specialchar\dialogs\lang\ko.js" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\specialchar\dialogs\lang\ku.js" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\specialchar\dialogs\lang\lt.js" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\specialchar\dialogs\lang\lv.js" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\specialchar\dialogs\lang\nb.js" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\specialchar\dialogs\lang\nl.js" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\specialchar\dialogs\lang\no.js" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\specialchar\dialogs\lang\oc.js" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\specialchar\dialogs\lang\pl.js" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\specialchar\dialogs\lang\pt-br.js" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\specialchar\dialogs\lang\pt.js" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\specialchar\dialogs\lang\ru.js" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\specialchar\dialogs\lang\si.js" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\specialchar\dialogs\lang\sk.js" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\specialchar\dialogs\lang\sl.js" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\specialchar\dialogs\lang\sq.js" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\specialchar\dialogs\lang\sv.js" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\specialchar\dialogs\lang\th.js" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\specialchar\dialogs\lang\tr.js" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\specialchar\dialogs\lang\tt.js" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\specialchar\dialogs\lang\ug.js" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\specialchar\dialogs\lang\uk.js" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\specialchar\dialogs\lang\vi.js" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\specialchar\dialogs\lang\zh-cn.js" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\specialchar\dialogs\lang\zh.js" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\specialchar\dialogs\lang\_translationstatus.txt" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\specialchar\dialogs\specialchar.js" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\tableselection\styles\tableselection.css" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\tabletools\dialogs\tableCell.js" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\table\dialogs\table.js" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\templates\dialogs\templates.css" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\templates\dialogs\templates.js" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\templates\templates\default.js" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\templates\templates\images\template1.gif" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\templates\templates\images\template2.gif" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\templates\templates\images\template3.gif" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\wordcount\css\wordcount.css" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\wordcount\lang\en.js" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\wordcount\lang\pt-br.js" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\wordcount\lang\zh-cn.js" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\wordcount\plugin.js" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\wsc\dialogs\ciframe.html" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\wsc\dialogs\tmpFrameset.html" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\wsc\dialogs\wsc.css" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\wsc\dialogs\wsc.js" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\wsc\dialogs\wsc_ie.js" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\wsc\LICENSE.md" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\wsc\README.md" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\plugins\wsc\skins\moono-lisa\wsc.css" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\skins\moono-lisa\dialog.css" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\skins\moono-lisa\dialog_ie.css" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\skins\moono-lisa\dialog_ie8.css" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\skins\moono-lisa\dialog_iequirks.css" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\skins\moono-lisa\editor.css" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\skins\moono-lisa\editor_gecko.css" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\skins\moono-lisa\editor_ie.css" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\skins\moono-lisa\editor_ie8.css" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\skins\moono-lisa\editor_iequirks.css" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\skins\moono-lisa\icons.png" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\skins\moono-lisa\icons_hidpi.png" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\skins\moono-lisa\images\arrow.png" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\skins\moono-lisa\images\close.png" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\skins\moono-lisa\images\hidpi\close.png" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\skins\moono-lisa\images\hidpi\lock-open.png" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\skins\moono-lisa\images\hidpi\lock.png" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\skins\moono-lisa\images\hidpi\refresh.png" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\skins\moono-lisa\images\lock-open.png" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\skins\moono-lisa\images\lock.png" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\skins\moono-lisa\images\refresh.png" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\skins\moono-lisa\images\spinner.gif" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\skins\moono-lisa\readme.md" />
+    <Content Include="wwwroot\lib\ckeditor_4.7.1_full\styles.js" />
+    <Content Include="wwwroot\lib\mdl\iconfont\codepoints" />
+    <Content Include="wwwroot\lib\mdl\iconfont\material-icons.css" />
+    <Content Include="wwwroot\lib\mdl\iconfont\MaterialIcons-Regular.eot" />
+    <Content Include="wwwroot\lib\mdl\iconfont\MaterialIcons-Regular.ijmap" />
+    <Content Include="wwwroot\lib\mdl\iconfont\MaterialIcons-Regular.svg" />
+    <Content Include="wwwroot\lib\mdl\iconfont\MaterialIcons-Regular.ttf" />
+    <Content Include="wwwroot\lib\mdl\iconfont\MaterialIcons-Regular.woff" />
+    <Content Include="wwwroot\lib\mdl\iconfont\MaterialIcons-Regular.woff2" />
+    <Content Include="wwwroot\lib\mdl\iconfont\README.md" />
+    <Content Include="wwwroot\lib\mdl\material.min.css" />
+    <Content Include="wwwroot\lib\mdl\material.min.css.map" />
+    <Content Include="wwwroot\lib\mdl\material.min.js" />
+    <Content Include="wwwroot\lib\mdl\material.min.js.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore" Version="1.1.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="1.1.2" />
+    <PackageReference Include="Microsoft.AspNetCore.Session" Version="1.1.2" />
+    <PackageReference Include="Microsoft.AspNetCore.StaticFiles" Version="1.1.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="1.1.2" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="1.1.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer.Design" Version="1.1.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="1.1.1" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="1.1.1" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.BrowserLink" Version="1.1.0" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="1.1.0" />
+    <PackageReference Include="MySql.Data" Version="7.0.7-m61" />
+    <PackageReference Include="MySql.Data.EntityFrameworkCore" Version="7.0.7-m61" />
+    <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="1.1.2" />
+    <PackageReference Include="Pomelo.EntityFrameworkCore.MySql.Design" Version="1.1.2" />
+  </ItemGroup>
+  <ItemGroup>
+    <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="1.0.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Areas\Manage\Controllers\" />
+    <Folder Include="Areas\Manage\Controllers\" />
+  </ItemGroup>
+
+</Project>

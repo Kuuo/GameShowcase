@@ -1,0 +1,17 @@
+@model IEnumerable<int>
+
+<div class="mdl-layout__drawer">
+  <span class="mdl-layout-title">GAME DEMO</span>
+  <nav class="mdl-navigation">
+    <a asp-action="Index" asp-controller="Home" 
+       class="mdl-navigation__link">首页</a>
+
+    @foreach (var year in Model)
+    {
+        <a asp-action="Index" asp-controller="Game" asp-route-id="@year"
+           class="mdl-navigation__link">
+          @year
+        </a>
+    }
+  </nav>
+</div>

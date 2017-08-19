@@ -1,0 +1,103 @@
+﻿* {
+  padding: 0;
+  margin: 0;
+  font-family: "Microsoft YaHei";
+}
+
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+  font-family: "Microsoft YaHei";
+}
+
+body {
+  min-height: 0;
+  background-color: rgb(250, 250, 250);
+}
+
+.home-header {
+  background-image: url('../images/header-background.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+.white-anchor {
+  color: #fff;
+}
+
+  .white-anchor:hover {
+    color: #fff;
+  }
+
+.mdl-layout__content {
+  padding-top: 20px;
+}
+
+.mdl-layout__drawer-button {
+  transition: linear .2s;
+  background-color: rgba(0, 0, 0, .2);
+}
+
+  .mdl-layout__drawer-button:hover {
+    background-color: rgba(0, 0, 0, .5);
+  }
+
+#pageTopMarker {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+footer {
+  clear: both;
+}
+
+.footer-left {
+  line-height: 36px;
+}
+
+.footer-middle {
+  text-align: center;
+}
+
+.footer-right {
+  text-align: right;
+  line-height: 36px;
+}
+
+.footer-anchor,
+.footer-anchor:hover {
+  color: #9e9e9e;
+}
+
+.validation-summary-errors ul {
+  list-style: none;
+}
+
+.main-container {
+  margin: 64px auto;
+}
+
+@media screen and (max-width: 1024px) {
+  .mdl-layout__header {
+    display: block;
+  }
+
+  .mdl-layout__drawer-button {
+    color: #fff;
+  }
+}
+
+@media screen and (max-width: 780px) {
+  .large-screen-only {
+    display: none;
+  }
+
+  .footer-left,
+  .footer-right {
+    text-align: center;
+  }
+}

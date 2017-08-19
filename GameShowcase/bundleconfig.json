@@ -1,0 +1,42 @@
+﻿[
+  {
+    "outputFileName": "wwwroot/css/site.min.css",
+    "inputFiles": [
+      "wwwroot/css/common.css",
+      "wwwroot/css/game-entry.css",
+      "wwwroot/css/game-details.css",
+      "wwwroot/css/slideshow.css"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/css/home-page.min.css",
+    "inputFiles": [
+      "wwwroot/css/home-page.css"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/css/login-page.min.css",
+    "inputFiles": [
+      "wwwroot/css/login-page.css"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/css/mag.min.css",
+    "inputFiles": [
+      "wwwroot/css/mag-team.css"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/game-details.min.js",
+    "inputFiles": [
+      "wwwroot/js/slideshow.js",
+      "wwwroot/js/video-click.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/common.min.js",
+    "inputFiles": [
+      "wwwroot/js/common.js"
+    ]
+  }
+]

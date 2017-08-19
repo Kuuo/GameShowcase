@@ -1,0 +1,22 @@
+@using GameShowcase.ViewComponents;
+@model Leader
+
+@{
+    ViewData["Title"] = "详情";
+}
+
+<div>
+  <a asp-action="Index" id="back"
+     class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--fab mdl-button--mini-fab mdl-button--accent">
+    <i class="material-icons">&#xE5C4;</i>
+  </a>
+  <a asp-action="Edit" asp-route-id="@Model.Id" style="float: right" id="edit"
+     class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--fab mdl-button--mini-fab mdl-button--accent">
+    <i class="material-icons">&#xE3C9;</i>
+  </a>
+</div>
+
+<div class="mdl-tooltip" for="back">返回</div>
+<div class="mdl-tooltip" for="edit">编辑</div>
+
+@await Component.InvokeAsync(nameof(LeaderProfile), new { id = Model.Id })

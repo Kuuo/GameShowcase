@@ -1,0 +1,57 @@
+@model LeaderCEViewModel
+
+@{
+    ViewData["Title"] = "新增组长";
+}
+
+<div>
+  <a asp-action="Index" id="back"
+     class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--fab mdl-button--mini-fab mdl-button--accent">
+    <i class="material-icons">&#xE5C4;</i>
+  </a>
+</div>
+
+<div class="mdl-tooltip" for="back">取消</div>
+
+<div style="width: 46%; min-width: 340px; margin: 24px auto 36px">
+  <form asp-action="Create">
+    <div class="form-horizontal">
+      <div class="form-group">
+        <label asp-for="StudentNumber" class="col-md-2 control-label"></label>
+        <div class="col-md-10">
+          <input type="number" asp-for="StudentNumber" class="form-control" />
+          <span asp-validation-for="StudentNumber" class="text-danger"></span>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label asp-for="Name" class="col-md-2 control-label"></label>
+        <div class="col-md-10">
+          <input asp-for="Name" class="form-control" />
+          <span asp-validation-for="Name" class="text-danger"></span>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label asp-for="Year" class="col-md-2 control-label"></label>
+        <div class="col-md-10">
+          <input asp-for="Year" class="form-control" value="@DateTime.Now.Year" />
+          <span asp-validation-for="Year" class="text-danger"></span>
+        </div>
+      </div>
+
+      <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+      <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+          <input type="submit" value="提交"
+                 class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored" />
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+
+@section Scripts {
+  @{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
+}

@@ -1,0 +1,58 @@
+@using GameShowcase.Data;
+@{ 
+    var CurrentAccount = ViewData["CurrentAccountData"] as CurrentAccountData;
+}
+
+<div id="pageTopMarker"></div>
+
+<footer class="mdl-mega-footer">
+  <div class="row">
+    <div class="col-sm-4 footer-left">
+      <span>&copy; @DateTime.Now.Year - 江西财经大学</span>
+    </div>
+
+    <div class="col-sm-4 footer-middle">
+      <a class="mdl-button mdl-js-button mdl-js-ripple-effect large-screen-only"
+         data-toggle="tooltip" data-placement="top" title="回到顶部"
+         style="color: #fff" href="#pageTopMarker">
+        <span class="glyphicon glyphicon-chevron-up"></span>
+      </a>
+    </div>
+
+    <div class="col-sm-4 footer-right">
+      @if (CurrentAccount.LoggedIn)
+      {
+          <button id="account-menu" class="mdl-button mdl-js-button footer-anchor">
+            @(CurrentAccount.IsAdmin ? "Admin" : CurrentAccount.LeaderStuNum)
+          </button>
+
+          <div class="mdl-menu mdl-menu--top-right mdl-js-menu mdl-js-ripple-effect"
+              for="account-menu">
+            <a asp-controller="Account" asp-action="SignOff">
+              <span class="mdl-menu__item">注销</span>
+            </a>
+            @if (CurrentAccount.IsAdmin)
+            {
+                <a asp-area="Manage" asp-controller="Leaders" asp-action="Index">
+                  <span class="mdl-menu__item">组长管理</span>
+                </a>
+            }
+            else
+            {
+                <a asp-area="Manage" asp-controller="Team" asp-action="Index">
+                  <span class="mdl-menu__item">小组管理</span>
+                </a>
+            }
+          </div>
+      }
+      else
+      {
+          <a asp-controller="Account" asp-action="Login"
+             class="mdl-button mdl-js-button white-anchor footer-anchor">
+            后台管理
+          </a>
+      }
+    </div>
+
+  </div>
+</footer>

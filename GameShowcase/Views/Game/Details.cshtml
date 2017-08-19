@@ -1,0 +1,26 @@
+@using GameShowcase.ViewComponents;
+@model Game
+@{ 
+    ViewData["DevYear"] = Model.Leader.Year;
+    ViewData["InDetailsPage"] = true;
+}
+
+<header class="mdl-layout__header mdl-layout__header--scroll mdl-layout__header--transparent">
+  <div class="mdl-layout__header-row">
+    @await Component.InvokeAsync(nameof(ExistDevYearList))
+
+    <button class="game-detail-back" style="border: none" 
+            onclick="history.back();"
+            data-toggle="tooltip" data-placement="right" title="返回">
+      <i class="material-icons">&#xE5C4;</i>
+    </button>
+  </div>
+</header>
+
+<div class="game-details-header" style="background-image: url('@Model.CoverUrl')"></div>
+
+<main class="mdl-layout__content">
+  <div class="game-details-content mdl-shadow--4dp">
+    @await Component.InvokeAsync(nameof(GameDetails), new { id = Model.Id })
+  </div>
+</main>

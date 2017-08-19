@@ -1,0 +1,60 @@
+@model IEnumerable<Leader>
+
+@{
+    ViewData["Title"] = "组长管理";
+}
+
+<div style="margin: 0 auto 24px">
+  <span>共 @Model.Count() 位</span>
+  <a asp-action="Create" style="float: right">新增组长</a>
+</div>
+
+<table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp"
+       style="width: 100%">
+  <thead>
+    <tr>
+      <th class="mdl-data-table__cell--non-numeric">
+        @Html.DisplayNameFor(model => model.StudentNumber)
+      </th>
+      <th class="mdl-data-table__cell--non-numeric">
+        @Html.DisplayNameFor(model => model.Name)
+      </th>
+      <th class="mdl-data-table__cell--non-numeric">
+        @Html.DisplayNameFor(model => model.Year)
+      </th>
+      <th class="mdl-data-table__cell--non-numeric">
+        创建的游戏
+      </th>
+      <th>操作</th>
+    </tr>
+  </thead>
+  <tbody>
+    @foreach (var item in Model)
+    {
+        <tr>
+          <td class="mdl-data-table__cell--non-numeric">
+            @Html.DisplayFor(modelItem => item.StudentNumber)
+          </td>
+          <td class="mdl-data-table__cell--non-numeric">
+            @Html.DisplayFor(modelItem => item.Name)
+          </td>
+          <td class="mdl-data-table__cell--non-numeric">
+            @Html.DisplayFor(modelItem => item.Year)
+          </td>
+          <td class="mdl-data-table__cell--non-numeric">
+            @if (item.Game != null)
+            {
+                <a asp-area="" asp-controller="Game" asp-action="Details" asp-route-id="@item.Game.Id">
+                  @Html.DisplayFor(modelItem => item.Game.Title)
+                </a>
+            }
+          </td>
+          <td>
+            <a asp-action="Edit" asp-route-id="@item.Id">编辑</a> |
+            <a asp-action="Details" asp-route-id="@item.Id">详情</a> |
+            <a asp-action="Delete" asp-route-id="@item.Id">删除</a>
+          </td>
+        </tr>
+    }
+  </tbody>
+</table>

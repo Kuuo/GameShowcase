@@ -1,0 +1,48 @@
+﻿@inject Microsoft.ApplicationInsights.AspNetCore.JavaScriptSnippet JavaScriptSnippet
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>系统管理员 - 后台管理</title>
+  <link rel="shortcut icon" href="~/images/icon01.png">
+  <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="~/lib/mdl/material.min.css" />
+  <link rel="stylesheet" href="~/lib/mdl/iconfont/material-icons.css" />
+  <link rel="stylesheet" href="~/css/site.min.css" />
+  @Html.Raw(JavaScriptSnippet.FullScript)
+</head>
+
+<body>
+  <div class="mdl-layout" style="min-width: 790px">
+    <header class="mdl-layout__header mdl-layout__header--scroll">
+      <div class="large-screen-only mdl-layout__header-row"></div>
+      <div class="mdl-layout__header-row">
+        <span class="mdl-layout-title">@ViewData["Title"]</span>
+        <div class="mdl-layout-spacer"></div>
+        @await Html.PartialAsync("~/Areas/Manage/Views/Shared/_ControlMenuPartial.cshtml")
+      </div>
+      <div class="mdl-layout__header-row">
+        <div class="mdl-layout-spacer"></div>
+        <nav class="mdl-navigation">
+          <a asp-area="" asp-controller="Account" asp-action="ModifyPassword"
+             class="mdl-navigation__link">修改密码</a>
+        </nav>
+      </div>
+    </header>
+
+    <div class="container main-container">
+      @RenderBody()
+    </div>
+
+    @await Html.PartialAsync("~/Areas/Manage/Views/Shared/_FooterPartial.cshtml")
+  </div>
+
+  <script type="text/javascript" src="~/lib/jquery/dist/jquery.min.js"></script>
+  <script type="text/javascript" src="~/lib/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="~/lib/mdl/material.min.js"></script>
+  <script type="text/javascript" src="~/js/common.min.js"></script>
+
+  @RenderSection("Scripts", required: false)
+</body>
+</html>

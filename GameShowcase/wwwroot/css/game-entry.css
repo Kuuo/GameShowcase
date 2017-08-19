@@ -1,0 +1,41 @@
+﻿.game-entry {
+  position: relative;
+  margin-bottom: 64px;
+  height: 180px;
+  background-size: cover;
+  background-position: center;
+  transition: linear .2s;
+}
+
+  .game-entry:hover {
+    box-shadow: #333 0 0 20px 0;
+  }
+
+.game-entry-content {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: linear-gradient(rgba(0,0,0,0) 5%, #333);
+}
+
+  .game-entry-content h5,
+  .game-entry-developers {
+    color: #FFF;
+  }
+
+  .game-entry-content h5,
+  .game-entry-developers {
+    width: 100%;
+    margin-left: 10px;
+    margin-bottom: 10px;
+  }
+
+    .game-entry-content:hover h5,
+    .game-entry-developers span {
+      color: #FFF;
+      text-decoration: none;
+    }
+
+.game-container {
+  padding: 48px 24px;
+}

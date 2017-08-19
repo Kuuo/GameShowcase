@@ -1,0 +1,78 @@
+@model Leader
+
+@{
+    ViewData["Title"] = "小组信息";
+    Layout = "~/Areas/Manage/Views/Shared/_TeamLayout.cshtml";
+}
+
+<div style="width: 52%; min-width: 480px; margin: 24px auto 36px">
+  <form asp-action="Info">
+    <div class="form-horizontal">
+      <input type="hidden" asp-for="Id" />
+      <input type="hidden" asp-for="Password" />
+
+      <div id="success-prompt"
+           class="alert alert-success" style="display: none">
+        修改成功
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+
+      <div class="form-group">
+        <label class="col-md-2 control-label">组长学号</label>
+        <div class="col-md-10">
+          <input asp-for="StudentNumber" class="form-control" />
+          <span asp-validation-for="StudentNumber" class="text-danger"></span>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-md-2 control-label">组长姓名</label>
+        <div class="col-md-10">
+          <input asp-for="Name" class="form-control" />
+          <span asp-validation-for="Name" class="text-danger"></span>
+        </div>
+      </div>
+      <div class="form-group">
+        <label asp-for="Year" class="col-md-2 control-label"></label>
+        <div class="col-md-10">
+          <input asp-for="Year" class="form-control" />
+          <span asp-validation-for="Year" class="text-danger"></span>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-md-2 control-label">组长邮箱</label>
+        <div class="col-md-10">
+          <input asp-for="Email" class="form-control" />
+          <span asp-validation-for="Email" class="text-danger"></span>
+        </div>
+      </div>
+      <div class="form-group">
+        <label asp-for="CoMembers" class="col-md-2 control-label"></label>
+        <div class="col-md-10">
+          <input asp-for="CoMembers" class="form-control" />
+          <span asp-validation-for="CoMembers" class="text-danger"></span>
+        </div>
+      </div>
+
+      <div asp-validation-summary="ModelOnly"
+           class="alert alert-danger col-md-offset-3 col-md-9">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+
+      <div class="form-group" style="margin-top: 24px">
+        <div class="col-md-offset-2 col-md-10">
+          <input type="submit" value="保存" style="width: 120px;"
+                 class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored" />
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+
+@section Scripts{
+  @{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
+  @{ await Html.RenderPartialAsync("_ModifySuccessScriptsPartial"); }
+}

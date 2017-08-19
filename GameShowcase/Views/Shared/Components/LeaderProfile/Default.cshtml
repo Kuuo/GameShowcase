@@ -1,0 +1,54 @@
+@model Leader
+
+<div style="width: 46%; min-width: 340px; margin: 24px auto 16px">
+  <ul class="mdl-list" style="width: 340px; margin: 0 auto;">
+    <li class="mdl-list__item">
+      <span class="mdl-list__item-primary-content">
+        <i class="material-icons mdl-list__item-icon" id="stunum">&#xE3EC</i>
+        @Html.DisplayFor(model => model.StudentNumber)
+      </span>
+    </li>
+    <li class="mdl-list__item">
+      <span class="mdl-list__item-primary-content">
+        <i class="material-icons mdl-list__item-icon" id="name">person</i>
+        @Html.DisplayFor(model => model.Name)
+      </span>
+    </li>
+    <li class="mdl-list__item">
+      <span class="mdl-list__item-primary-content">
+        <i class="material-icons mdl-list__item-icon" id="year">&#xE916</i>
+        @Html.DisplayFor(model => model.Year)
+      </span>
+    </li>
+    <li class="mdl-list__item">
+      <span class="mdl-list__item-primary-content">
+        <i class="material-icons mdl-list__item-icon" id="email">&#xE0BE</i>
+        @Html.DisplayFor(model => model.Email)
+      </span>
+    </li>
+    <li class="mdl-list__item">
+      <span class="mdl-list__item-primary-content">
+        <i class="material-icons mdl-list__item-icon" id="members">&#xE7EF</i>
+        @Html.DisplayFor(model => model.CoMembers)
+      </span>
+    </li>
+    @if (Model.Game != null)
+    {
+        <li class="mdl-list__item" id="members">
+          <span class="mdl-list__item-primary-content">
+            <i class="material-icons mdl-list__item-icon" id="game">&#xE30F</i>
+            <a asp-area="" asp-controller="Game" asp-action="Details" asp-route-id="@Model.Game.Id">
+              @Html.DisplayFor(modelItem => Model.Game.Title)
+            </a>
+          </span>
+        </li>
+    }
+  </ul>
+</div>
+
+<div class="mdl-tooltip" for="stunum">学号</div>
+<div class="mdl-tooltip" for="name">姓名</div>
+<div class="mdl-tooltip" for="email">邮箱</div>
+<div class="mdl-tooltip" for="year">年份</div>
+<div class="mdl-tooltip" for="members">组员</div>
+<div class="mdl-tooltip" for="game">创建的游戏</div>

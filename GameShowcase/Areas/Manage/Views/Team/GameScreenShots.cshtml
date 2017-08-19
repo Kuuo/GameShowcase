@@ -1,0 +1,106 @@
+@model GameScreenShotsViewModel
+
+@{
+    ViewData["Title"] = "游戏截图";
+    Layout = "~/Areas/Manage/Views/Shared/_TeamLayout.cshtml";
+
+    var urls = Model.Urls?.Split(
+                new string[] { Screenshot.Seperator },
+                StringSplitOptions.RemoveEmptyEntries);
+    var urlCount = urls?.Length ?? 0;
+}
+<link href="~/css/mag.min.css" rel="stylesheet" />
+
+
+<div style="width: 86%; min-width: 480px; margin: 24px auto 36px">
+  <form asp-action="GameScreenShots" onsubmit="setUrls()">
+    <textarea asp-for="Urls" style="display: none" id="urlsTT"></textarea>
+
+    @if (urlCount > 0)
+    {
+        <div class="mdl-grid" id="mssc-container">
+          @{ var i = 0; }
+          @foreach (var url in urls)
+          {
+            var id = "mssc" + i++;
+            <div class="mag-screenshot-container mdl-cell mdl-cell--2-col" id="@id">
+              <img src="@url" style="width: 100%" />
+
+              <button class="mag-screenshot-delete" onclick="deleteurl('@id')"
+                      data-toggle="tooltip" data-placement="right" title="删除">
+                <span style="font-family: sans-serif">&times;</span>
+              </button>
+            </div>
+          }
+        </div>
+    }
+
+    <div style="margin: 36px auto 24px">
+      <p style="color: #333; font-size: 13px"><strong>添加截图</strong></p>
+      <div class="input-group">
+        <input type="text" class="form-control" placeholder="Url..." id="newUrl" />
+        <span class="input-group-btn">
+          <button class="btn btn-primary" type="button" id="addUrlBtn" onclick="addScreenshot()">添加</button>
+        </span>
+      </div>
+    </div>
+
+    <div class="text-center" style="margin: 36px auto">
+      <input type="submit" value="保存" style="width: 120px"
+             class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored" />
+    </div>
+  </form>
+</div>
+
+<div id="snackbar-delete" class="mdl-js-snackbar mdl-snackbar">
+  <div class="mdl-snackbar__text"></div>
+  <button class="mdl-snackbar__action" type="button"></button>
+</div>
+
+@section Scripts {
+  <script type="text/javascript">
+    var editingUrlCount = @urlCount;
+
+    function setUrls() {
+      var urls = $('.mag-screenshot-container img').map(function () {
+        return $(this).attr('src');
+      }).get().join('\r\n');
+      $('#urlsTT').html(urls);
+    }
+
+    function addScreenshot() {
+      addMssc($('#newUrl').val());
+    }
+
+    function addMssc(url) {
+      var id = "mssc" + editingUrlCount++;
+      var con = "<div class=\"mag-screenshot-container mdl-cell mdl-cell--2-col\" id=\""+id+"\">" +
+              "<img src=\""+url+"\" style=\"width: 100%\" />" +
+              "<button class=\"mag-screenshot-delete\" onclick=\"deleteurl('"+id+"')\"" +
+                      "data-toggle=\"tooltip\" data-placement=\"right\" title=\"删除\">"+
+                "<span style=\"font-family: sans-serif\">&times;</span></button></div>";
+      $('#mssc-container').append(con);
+      $('[data-toggle="tooltip"]').tooltip();
+    }
+
+    var snackbarContainer = document.querySelector('#snackbar-delete');
+    var deletedUrl = "";
+
+    var snackbarData = {
+      message: '截图已删除',
+      timeout: 3000,
+      actionHandler: function (event) {
+        addMssc(deletedUrl);
+      },
+      actionText: '撤销'
+    };
+
+    function deleteurl(id) {
+      deletedUrl = $('#' + id + ' img').attr('src');
+      $('#' + id).remove();
+
+      'use strict';
+      snackbarContainer.MaterialSnackbar.showSnackbar(snackbarData);
+    }
+  </script>
+}

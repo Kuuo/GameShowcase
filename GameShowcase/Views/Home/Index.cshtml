@@ -1,0 +1,62 @@
+﻿@model Dictionary<int, List<Game>>
+
+@{
+    ViewData["Title"] = "Home";
+}
+
+<link href="~/css/home-page.min.css" rel="stylesheet" />
+
+<header class="mdl-layout__header mdl-layout__header--scroll mdl-layout__header--transparent home-header">
+  <div class="large-screen-only mdl-layout__header-row"></div>
+  <div class="mdl-layout__header-row">
+    <h4>Game Demo From JXUFE</h4>
+  </div>
+  <div class="large-screen-only mdl-layout__header-row"></div>
+</header>
+
+<main class="mdl-layout__content">
+  @foreach (var item in Model)
+  {
+      <div class="container" style="margin: 36px auto 64px">
+        <a asp-controller="Game" asp-action="Index" asp-route-id="@item.Key">
+          <span style="font-size: 24px">@item.Key</span>
+          <span style="float: right">查看所有 →</span>
+        </a>
+        <hr />
+
+        <div id="gameEntry" class="carousel slide" data-ride="carousel">
+          <!-- Indicators -->
+          <ol class="carousel-indicators">
+            <li data-target="#gameEntry" data-slide-to="0" class="active"></li>
+            @for (int i = 1; i < item.Value.Count; i++)
+            {
+                <li data-target="#gameEntry" data-slide-to="@i"></li>
+            }
+          </ol>
+          <!-- Wrapper for slides -->
+          <div class="carousel-inner" role="listbox">
+            @for (int i = 0; i < item.Value.Count; i++)
+            {
+                <div class="item @(i == 0 ? "active" : "")">
+                  <a asp-controller="Game" asp-action="Details" asp-route-id="@item.Value[i].Id">
+                    <img src="@item.Value[i].CoverUrl" alt="@item.Value[i].Title">
+                  </a>
+                  <div class="carousel-caption">
+                    <h5>@item.Value[i].Title</h5>
+                    <p>@item.Value[i].Developers</p>
+                  </div>
+                </div>
+            }
+          </div>
+          <!-- Left and right controls -->
+          <a class="left carousel-control" href="#gameEntry" role="button" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+          </a>
+          <a class="right carousel-control" href="#gameEntry" role="button" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+          </a>
+        </div>
+      </div>
+  }
+
+</main>

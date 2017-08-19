@@ -1,0 +1,13 @@
+<button id="menu"
+        class="mdl-button mdl-js-button mdl-button--icon">
+  <i class="material-icons">more_vert</i>
+</button>
+<div class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect"
+    for="menu">
+  <a asp-area="" asp-controller="Home" asp-action="Index">
+    <span class="mdl-menu__item">返回首页</span>
+  </a>
+  <a asp-area="" asp-controller="Account" asp-action="SignOff">
+    <span class="mdl-menu__item">注销</span>
+  </a>
+</div>

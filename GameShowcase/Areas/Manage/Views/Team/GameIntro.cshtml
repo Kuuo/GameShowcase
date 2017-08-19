@@ -1,0 +1,63 @@
+@model GameIntroViewModel
+
+@{
+    ViewData["Title"] = "游戏介绍";
+    Layout = "~/Areas/Manage/Views/Shared/_TeamLayout.cshtml";
+}
+
+<div style="margin: 8px auto 36px">
+  <h5 style="margin-bottom: 24px">编辑游戏介绍</h5>
+
+  <div class="alert alert-info text-center" id="promptText" 
+       style="margin: 64px auto">加载编辑器中...</div>
+
+  <form asp-action="GameIntro" onsubmit="setContent()" id="introForm" style="display:none">
+    <div>
+      <input type="hidden" asp-for="Id" />
+      <input type="hidden" asp-for="Content" id="content" />
+    </div>
+    
+    <textarea id="editor" rows="25" cols="80">@Model.Content</textarea>
+    
+    <div class="text-center" style="margin: 8px auto">
+      <span asp-validation-for="Content" class="text-danger"></span>
+    </div>
+
+    <div asp-validation-summary="ModelOnly" class="alert alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+
+    <div style="margin: 24px auto auto; text-align: center">
+      <input type="submit" value="保存" style="width: 80px"
+             class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored" />
+    </div>
+  </form>
+</div>
+
+@section Scripts {
+  <script src="~/lib/ckeditor_4.7.1_full/ckeditor.js"></script>
+
+  <script>
+    function showEditor() {
+      CKEDITOR.replace('editor');
+      $('#promptText').css('display', 'none');
+      $('#introForm').css('display', 'block');
+    }
+    
+    function getData() {
+      return CKEDITOR.instances.editor.getData();
+    }
+    
+    function setContent() {
+      $('#content').attr('value', getData());
+    }
+
+    $(document).ready(function () {
+      showEditor();
+    })
+  </script>
+
+  @{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
+}
